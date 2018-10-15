@@ -1,0 +1,57 @@
+<rewritepw class="app-page">
+	<header class="header-bar">
+		<button class="btn pull-left" id="back-page" onclick="back_btn();" style="margin-left: 4%; width:10%; background: url(img/arrow.png); background-size: 50% 50%; background-repeat: no-repeat; background-position:center"></button>
+		<div class="center">
+			<h1 class="title" id="rpwHead" style="width: 200%; font-size: 1.5em; font-weight: bold; display: table-cell;">비밀번호 설정</h1>
+		</div>
+	</header>
+	<div class="content" style="background-color:#e8eff7">
+		<div style="padding-top:20%; padding-left:8%; padding-right:8%;">
+			<p style="font-size: 110%;">비밀번호를 입력해주세요</p>
+		</div>
+		<div style="padding-top:5%; padding-left:8%; padding-right:8%;">
+			<input type="password" id="pre_pw" name="pre_pw" placeholder="  현재 비밀번호 입력" style="background-color:white" onkeydown="moveFocus(event, 'pre_pw', 'chg_pw');">
+		</div>
+		<div style="padding-top:5%; padding-left:8%; padding-right:8%;">
+			<input type="password" id="chg_pw" name="chg_pw" placeholder="  변경 될 비밀번호 입력" style="background-color:white" onkeydown="moveFocus(event, 'chg_pw', 'r_chg_pw');">
+		</div>
+		<div style="padding-top:5%; padding-left:8%; padding-right:8%;">
+			<input type="password" id="r_chg_pw" name="r_chg_pw" placeholder="  변경 될 비밀번호 재입력" style="background-color:white" onkeydown="moveFocus(event, 'r_chg_pw', '');">
+		</div>
+		<div style="padding-top:5%; padding-left:8%; padding-right:8%; text-align: center;">
+			<button class="btn" id="btn_accept" style="background-color:#2bcdf5; width:45%; text-align:center; color:white">확인</button>
+			<button class="btn" data-navigation="$previous-page" style="background-color:#2bcdf5; margin-left:3%; width:45%; text-align:center; color:white">취소</button>
+		</div>
+	</div>
+</rewritepw>
+<script type="text/javascript">
+
+	function moveFocus(e, name, m_name) {
+
+		document.querySelector('#pre_pw').on('click', function() {
+			document.getElementById('pre_pw').focus();
+		});
+
+		if (e.keyCode == 13) {
+			switch (name) {
+				case 'pre_pw':
+					console.log(m_name);
+					document.getElementById(m_name).focus();
+					break;
+				case 'chg_pw':
+					console.log(m_name);
+					document.getElementById(m_name).focus();
+					break;
+				case 'r_chg_pw':
+					document.getElementById('btn_accept').focus();
+					Keyboard.hide();
+					break;
+			}
+		}
+	}
+</script>
+<script type="text/javascript">
+	function back_btn() {
+		app.changePage('setting');
+	}
+</script>

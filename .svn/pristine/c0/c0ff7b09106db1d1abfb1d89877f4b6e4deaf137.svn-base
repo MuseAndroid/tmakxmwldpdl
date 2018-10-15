@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-v4-26.0.0-alpha1_1a820b9b820f7c07053cc963231c96e6e02d15cf.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-utils\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-26.0.0-alpha1_647f307ceaf7d67bb511aefe055210727c492051.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\me.leolin\ShortcutBadger\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="b346a5d3fc5d6d1d36c6262c8cc865b76df9f40c">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\me.leolin-ShortcutBadger-1.1.4_6521ae6b635f092859008f9a612231c2efed6d11.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="421a5cebe9ff187c98075c59786e9464c5c67d36">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-iid-10.2.0_0e46639f727912c89b9d3d8360c1133b8fc26a46.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="f02c3e6090666745e1efe831046240859fd2cdc9">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_e2677f228c020c36724723ae28b26a6b43265081.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.2.0_9de39d124235fd1b081b7202d38013e189eb5efe.jar" />
+    </item>
+    <item
+        jar="E:\Android\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_16700a35dc004f022af552bbe125412cf6b3eb9a.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-compat-26.0.0-alpha1_99382618f50b965c25d37b403f8ee990e69d510a.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-10.2.0_67236a39fa42b53b3abb4bde15a07d8a905cd09a.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.android.support\customtabs\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="596fcec5b5b7080d2e5525dae976b5e9967a6b22">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-customtabs-23.2.0_e985a44a5a50f17eda02280935424c8573111590.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="ea03bbfaed89818f233ee9918fac493f2b63895a">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gcm-10.2.0_541440449f243606e5e8406ea5981d053240f074.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-fragment\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-26.0.0-alpha1_08b5f8ce5d5ccb628776431f098e91c1613ed224.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-ui\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-26.0.0-alpha1_7647a0e147262a4cc994155be42da8ea877d73c1.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-media-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-26.0.0-alpha1_85256050b61cf5b370af0185fb3216ef39c6fb67.jar" />
+    </item>
+    <item
+        jar="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="E:\android_work\repo-smartga_final\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.2.0_07a85585454acb29488acf2d5f5cd5088502823b.jar" />
+    </item>
+
+</items>

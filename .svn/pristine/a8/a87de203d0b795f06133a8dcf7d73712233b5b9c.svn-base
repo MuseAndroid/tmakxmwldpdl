@@ -1,0 +1,150 @@
+[
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon07.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon07.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon04.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon04.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_disabled.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_disabled.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_action_remove.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_remove.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\info.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\info.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\user.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\user.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon01.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon01.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_action_next_item.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_next_item.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\screen.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\screen.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_disabled.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_disabled.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\on.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\on.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\copy.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\copy.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\g_logo.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\g_logo.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\off.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\off.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon06.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon06.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\close.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\close.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon09.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon09.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_pressed.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_pressed.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon03.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon03.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\login_logo.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\login_logo.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon05.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon05.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_pressed.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_pressed.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon08.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon08.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_location.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\ic_location.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\pw.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\pw.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_disabled.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_disabled.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_pressed.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_pressed.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon10.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon10.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_pressed.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_pressed.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_disabled.9.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_disabled.9.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\arrow.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\arrow.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_action_previous_item.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_previous_item.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\drawer_icon02.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-xxhdpi\\drawer_icon02.png"
+    }
+]

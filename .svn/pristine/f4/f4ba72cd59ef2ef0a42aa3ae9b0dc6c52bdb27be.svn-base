@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fTY-H9-1T5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="V5D-xO-kHd">
+            <objects>
+                <viewController id="fTY-H9-1T5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j1R-L9-7Gc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uz1-cP-BLD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5U1-Zy-NBL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchStoryboard" translatesAutoresizingMaskIntoConstraints="NO" id="seZ-fK-Nol">
+                                <rect key="frame" x="0.0" y="20" width="375" height="627"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" image="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="seZ-fK-Nol" firstAttribute="leading" secondItem="5U1-Zy-NBL" secondAttribute="leading" id="V2q-IB-vAm"/>
+                            <constraint firstItem="seZ-fK-Nol" firstAttribute="top" secondItem="j1R-L9-7Gc" secondAttribute="bottom" id="aFH-C8-74p"/>
+                            <constraint firstAttribute="bottom" secondItem="seZ-fK-Nol" secondAttribute="bottom" constant="20" symbolic="YES" id="ehr-wc-Q47"/>
+                            <constraint firstAttribute="trailing" secondItem="seZ-fK-Nol" secondAttribute="trailing" id="pQv-Jv-Gv1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9Y-IT-smp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87.200000000000003" y="-189.3553223388306"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchStoryboard" width="375" height="667"/>
+    </resources>
+</document>

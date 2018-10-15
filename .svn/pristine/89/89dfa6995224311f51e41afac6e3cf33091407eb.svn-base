@@ -1,0 +1,17 @@
+dependencies: \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Private/Plugins/CDVUIWebViewEngine/CDVUIWebViewNavigationDelegate.m \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Private/Plugins/CDVUIWebViewEngine/CDVUIWebViewNavigationDelegate.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Private/Plugins/CDVUIWebViewEngine/CDVUIWebViewEngine.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVPlugin.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVPluginResult.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVAvailability.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVAvailabilityDeprecated.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/NSMutableArray+QueueAdditions.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVCommandDelegate.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVInvokedUrlCommand.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVWebViewEngineProtocol.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVViewController.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVCommandQueue.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVScreenOrientationDelegate.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVCommandDelegateImpl.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVUserAgentUtil.h

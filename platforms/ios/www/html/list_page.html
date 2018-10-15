@@ -1,0 +1,137 @@
+<list_page id="iframeBody" class="app-page" style="overflow-y: hidden">
+    <header class="header-bar" id="headerBar" style="position: static;">
+        <button class="btn pull-left" data-panel-id="action-sheet" style="width:15%; background: url(img/m_icon.png); background-size: 50% 50%; background-repeat: no-repeat; background-position:center;"></button>
+        <div class="center">
+            <h1 class="title" id="hWidth" style="width: 200%; font-size: 1.5em; font-weight: bold; display: table-cell;"></h1>
+        </div>
+        <button class="btn pull-right" onclick="gcmNotif();" id="btn_noti_bell" style="width:15%; background: url(images/bell-outline.png); background-size: 50% 50%; background-repeat: no-repeat; background-position:center;"></button>
+    </header>
+    
+    <div id="page_connect" class="content" style="overflow:hidden; background-color: #eeeeee;">
+        <iframe class="main_frame" id="page_frame" name="page_frame" style="height:100%; width: 100%;" frameborder="0" framespacing="0" marginheight="0" marginwidth="0" vspace="0" scrolling="no" onload="frameLoad();"></iframe>
+    </div>
+    
+    <!-- 화면 form (공통) -->
+    <form id="page_formAgent" name="page_formAgent" method="POST">
+        <input type=hidden id="page_gubun" name="gubun_num" value="">
+        <input type=hidden id="page_emp_cd" name="mb_emp_cd" value="">
+        <input type=hidden id="page_com_cd" name="server_company_cd" value="">
+        <input type=hidden id="page_regid" name="reg_id" value="">
+        <input type=hidden id="page_menu_role" name="menu_authority_role_cd" value="">
+        <input type=hidden id="page_data_role" name="data_authority_role_cd" value="">
+        <input type=hidden id="page_device_type" name="device_type" value="">
+        <input type=hidden id="cd_vl_ky" name="cd_vl_ky" value="">
+        <input type=hidden id="page_search_emp_cd" name="search_emp_cd" value="">
+        <input type=hidden id="page_view_gubun" name="view_gubun" value="">
+        <input type=hidden id="page_lat" name="lat" value="">
+        <input type=hidden id="page_lng" name="lng" value="">
+        <input type=hidden id="page_kind" name="bulbd_no" value="">
+    </form>
+</list_page>
+
+<script type="text/javascript">
+    document.addEventListener("deviceready", function() {
+                              console.log(window.device.model);
+                              var iModel = window.device.model;
+                              if (iModel == "iPhone10,3" || iModel == "iPhone10,6" || iModel == "x86_64") {
+                              console.log("아이폰X다!!!");
+                              $(".main_frame").css("height", "92%");
+                              } else {
+                              
+                              }
+                              });
+    function gcmNotif() {
+        // 새글 등록 갯수를 판별하여 없으면 알림을 모두 확인했다는 알림창을, 있으면 Noti List 페이지 이동을 함.
+        console.log('이얍!!!');
+        console.log(localStorage.getItem('pnsCnt'));
+        var pnsCnt = parseInt(localStorage.getItem('pnsCnt'));
+        console.log('pns 갯수' + pnsCnt);
+        if (pnsCnt != 0 && localStorage.getItem('pnsCnt') != 'undefined') {
+            app.changePage('noti_list', null);
+        } else {
+            phonon.alert('알림을 모두 확인하셨습니다.', '', false, '확인');
+        }
+    }
+
+function frameLoad() {
+    $("body").find("#page_frame").contents().find('body').find("#sendkko").click(function(e){
+        console.log("카카오톡 버튼 부분!!");
+        var confirm = $("body").find("#page_frame").contents().find('body').find(".confirm");
+        console.log(confirm);
+
+        console.log("인터벌 시작");
+        function hasId(){
+            var conf = $("body").find("#page_frame").contents().find('body').find(".confirm");
+            var cancel = $("body").find("#page_frame").contents().find('body').find(".cancel");
+            conf.data("name", "kko_btn");
+            console.log($("body").find("#page_frame").contents().find('body').find(".confirm"));
+
+            if($("body").find("#page_frame").contents().find('body').find(".confirm").data("name") == "kko_btn"){
+            clearInterval(setterId);
+            conf.bind('click', winopen);
+            cancel.bind('click', canceler);
+            console.log("인터벌 끝");
+            
+            }
+        }
+                                                                                 
+        var setterId = setInterval(hasId, 10);
+
+        function canceler(){
+            $("body").find("#page_frame").contents().find('body').find(".confirm").unbind('click', winopen);
+        }
+                                                                                 
+        function winopen(){
+            var cust_code = $("body").find("#page_frame").contents().find('body').find("#CUST_CODE").val();
+            console.log(cust_code);
+            //var url = 'http://pcc.genexon.co.kr/api/customAgreeforKakao.api?Code=' + cust_code;
+            var url = 'https://pcc.genexon.co.kr:446/api/customAgreeforKakao.api?Code=' + cust_code; // 시큐리티 버전
+            console.log(url);
+            var ref = window.open(url,'_system','location=no');
+            $("body").find("#page_frame").contents().find('body').find(".confirm").unbind('click', winopen);
+        }
+    });
+    $("body").find("#page_frame").contents().find('body').find(".i_filedown").click(function(e){
+        console.log('파일 다운 클릭!!!!!!!');
+        console.log($("body").find("#page_frame").contents().find('body').find(".i_filedown").index(this));
+        var index = $("body").find("#page_frame").contents().find('body').find(".i_filedown").index(this);
+        var view_url = "#view_url" + (index + 1);
+        console.log(view_url);
+        console.log($("body").find("#page_frame").contents().find('body').find(view_url).val());
+        var url = $("body").find("#page_frame").contents().find('body').find(view_url).val();
+        var ref = window.open(url,'_system','location=no');
+    });
+}
+</script>
+
+<script type="text/javascript">
+    
+    /* var i = 0;
+    var searchInterval = setInterval(function() {
+        // var filepath = $("#page_frame").get(0).contentWindow.document.getElementById('view_url').value;
+        i += 1;
+        console.log('감지되었니???' + $("#page_frame").get(0).contentWindow.document.getElementById('view_url0').value);
+        console.log('감지되었니???' + $("#page_frame").get(0).contentWindow.document.getElementById('view_url1').value);
+        localStorage.setItem('filepath', filepath);
+        console.log('데이터 저장 = ' + localStorage.getItem('filepath'));
+        clearRole(i);
+    }, 2000);
+
+    function clearRole(count) {
+        console.log(count);
+        if (count%5 == 0) {
+            console.log('멈춘다!!!');
+            clearInterval(searchInterval);
+            if (localStorage.getItem('filepath') != null) {
+                var inapp = phonon.confirm('첨부파일을 보시겠습니까?', '', false ,'확인', '취소');
+                inapp.on('confirm', function() {
+                    openUrl(localStorage.getItem('filepath'), false);
+                });
+                inapp.on('cancel', function() {
+                    localStorage.removeItem('filepath');
+                    startInterval();
+                });
+            }
+        }
+    } */
+</script>

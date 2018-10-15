@@ -1,0 +1,63 @@
+<splash_screen class="app-page">
+	<div class="content" id="com_bground" style="background: url(images/intro2_1242.jpg); background-repeat: no-repeat; background-size: 100%; background-position: center;">
+		<!--<div id="logo_image" style="text-align: center">-->
+			<!--<img id="com_title" src="img/g_logo.png" style="width: 60%">-->
+			<!--<br>-->
+			<!--<img id="com_image" src="img/merp.png" style="width: 50%;">-->
+		<!--</div>-->
+	</div>
+</splash_screen>
+
+<script type="text/javascript">
+	document.addEventListener("deviceready", function() {
+		$('#panel_menu').append('<h1 class="title" id="login_info" onclick="emp_excp(\'' + localStorage.getItem('info') + '\');" style="position: relative; padding-left: 0.5em; top: 45%;"></h1>');
+		$('#panel_menu').append('<p id="login_man" onclick="emp_excp(\'' + localStorage.getItem('info') + '\');" style="position: absolute; font-size: 1.5em; color:white; left: 25%; bottom: 20%;"></p>');
+		$('#panel_menu').append('<a class="btn" data-panel-close="true" onclick="go_page(\'' + localStorage.getItem('main') + '\');" style="position: absolute; left: 70%; bottom: 20%"><img src="images/2x_home.png" style="width: 80%; -webkit-transform: translateY(20%);"></a>');
+		setTimeout(function() {
+			draw_Identif();
+		}, 1500);
+	});
+</script>
+
+<script type="text/javascript">
+	function draw_Identif() {
+		console.log(window.sessionStorage.getItem('emp_cd'));
+		console.log(window.sessionStorage.getItem('emp_nm'));
+		if (sessionStorage.getItem('emp_cd') !== null) {  // 추가사항 : erp내에 fp 사진이 등록되어 있으면 사진을 우선적으로 가져오도록 이미지 주소 변경 필요, 조건 추가 필요(fp사진 있는지 없는지)
+			document.getElementById('btn_plogin').style.display = "none";
+			document.getElementById('btn_logout').style.display = "block";
+			// var server2 = 'http://192.168.0.49:8031';
+			// var server2 = 'http://192.168.2.199:8087';
+			//var server2 = 'http://app3.genexon.co.kr';
+			var server2 = 'https://app3.genexon.co.kr:446'; // 상용URL(SSL적용)
+			var fileUrlStr = localStorage.getItem('fileURL');
+			var fileStr = localStorage.getItem('fileName');
+			var sumFileUrl = fileUrlStr + fileStr;
+			var fileLastStr = fileStr.charAt(fileStr.length -1);
+			console.log("들어옴?!!!!!!!!!!!!?!?!?1??!?!?");
+			console.log(fileUrlStr);
+			console.log("fileStr ==== " + fileStr);
+			console.log(sumFileUrl);
+			console.log("fileLastStr ==== " + fileLastStr);
+			if (fileLastStr != '/') {
+				document.getElementById('login_info').innerHTML = '<img src="' + sumFileUrl + '" style="width: 20%; border-radius: 100%">';
+			} else {
+				if (localStorage.getItem('gender') == '1' || localStorage.getItem('gender') == '3') {
+					document.getElementById('login_info').innerHTML = '<img src="' + server2 + '/images/user.png" style="width: 20%; border-radius: 100%">';
+				} else if (localStorage.getItem('gender') == '2' || localStorage.getItem('gender') == '4') {
+					document.getElementById('login_info').innerHTML = '<img src="' + server2 + '/images/user_girl.png" style="width: 20%; border-radius: 100%">';
+				} else if (localStorage.getItem('gender') == '0') {
+					document.getElementById('login_info').innerHTML = '<img src="' + server2 + '/images/co.png" style="width: 20%; border-radius: 100%">';
+				} else {
+					document.getElementById('login_info').innerHTML = '<img src="' + server2 + '/images/unknow.png" style="width: 20%; border-radius: 100%">';
+				}
+			}
+			document.getElementById('login_man').innerHTML = sessionStorage.getItem('emp_nm') + '<br>' + sessionStorage.getItem('emp_cd');
+		} else {
+			document.getElementById('btn_plogin').style.display = "block";
+			document.getElementById('btn_logout').style.display = "none";
+			document.getElementById('login_info').innerHTML = '<img src="images/user.png">&nbsp;&nbsp;&nbsp;smartGA';
+		}
+	}
+	// 2016.12.02 홍준호 수정 - 로그인 시 변경되지 않았던 사원코드, 사원명 변경되도록 캐시 새로고침하도록 위치 수정
+</script>

@@ -1,0 +1,25 @@
+dependencies: \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVViewController.m \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDV.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVAvailability.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVAvailabilityDeprecated.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVAppDelegate.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVViewController.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVInvokedUrlCommand.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVCommandDelegate.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVCommandQueue.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVScreenOrientationDelegate.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVPlugin.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVPluginResult.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/NSMutableArray+QueueAdditions.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVWebViewEngineProtocol.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVURLProtocol.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVWhitelist.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVTimer.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVUserAgentUtil.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Private/CDVPlugin+Private.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Private/Plugins/CDVUIWebViewEngine/CDVUIWebViewDelegate.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVConfigParser.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/NSDictionary+CordovaPreferences.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Private/Plugins/CDVLocalStorage/CDVLocalStorage.h \
+  /Users/junho/Documents/smartga/platforms/ios/CordovaLib/Classes/Public/CDVCommandDelegateImpl.h

@@ -1,0 +1,24 @@
+<setting class="app-page">
+	<header class="header-bar">
+		<button class="btn pull-left" id="back-page" onclick="back_page();" style="margin-left: 4%; width:10%; background: url(img/arrow.png); background-size: 50% 50%; background-repeat: no-repeat; background-position:center"></button>
+		<div class="center">
+			<h1 class="title" id="setHead" style="width: 200%; font-size: 1.5em; font-weight: bold; display: table-cell;">설정</h1>
+		</div>
+	</header>
+
+	<div class="content" style="background-color:#e8eff7">
+		<ul class="list" style="background-color:white;">
+			<li id="l_my_info"><a class="padded-list" style="padding-top:2%; font-size: 100%">내 정보<img class="pull-right" id="img_m_info" src="img/bg_list.png" style="width:2em; height:auto; margin-top:3%"></a></li>
+			<li id="l_chg_pw"><a class="padded-list" style="padding-top:2%; font-size: 100%">비밀번호 변경<img class="pull-right" id="img_fd_pw" src="img/bg_list.png" style="width:2em; height:auto; margin-top:3%"></a></li>
+			<li id="l_main_st"><a class="padded-list" style="padding-top:2%; font-size: 100%">메인화면 설정<img class="pull-right" id="img_m_set" src="img/bg_list.png" style="width:2em; height:auto; margin-top:3%"></a></li>
+			<li id="l_noti_st"><a href="#item" class="padded-list" style="padding-top:2%; font-size: 100%">알림<img class="pull-right" id="img_noti_st" src="images/on.png" style="width:25%; height: auto; -webkit-transform: translateY(0.4em);"></a></li>
+			<li id="l_alog_st"><a href="#item" class="padded-list" style="padding-top:2%; font-size: 100%">자동로그인<img class="pull-right" id="img_alog_st" src="images/off.png" style="width:25%; height: auto; -webkit-transform: translateY(0.4em);"></a></li>
+		</ul>
+	</div>
+</setting>
+<script type="text/javascript">
+	function back_page() {
+		console.log(localStorage.getItem('nowHash'));
+		location.href = localStorage.getItem('nowHash');
+	}
+</script>

@@ -1,0 +1,51 @@
+<findpw class="app-page">
+    <header class="header-bar">
+        <button class="btn pull-left" id="back-home" data-navigation="$previous-page" style="margin-left: 4%; width:10%; background: url(img/arrow.png); background-size: 50% 50%; background-repeat: no-repeat; background-position:center"></button>
+        <div class="center">
+            <h1 class="title" id="fpw_title" style="width: 200%; font-size: 2em; font-weight: bold; display: table-cell;">비밀번호 찾기</h1>
+        </div>
+    </header>
+
+	<div class="content" style="background-color:#e8eff7">
+		<div style="padding-left:8%; padding-right:8%; padding-top:15%">
+
+			<div class="padded-full">
+				<input id="mb_company_cd1" name="mb_company_cd1" type="text" placeholder="    회사코드" onkeydown="moveFocus(event, 'mb_company_cd1', 'mb_user_id1');">
+			</div>
+			<div class="padded-full" style="padding-top:1%">
+				<input id="mb_user_id1" name="mb_user_id1" type="text" placeholder="    사원번호" onkeydown="moveFocus(event, 'mb_user_id1', 'cellphone');">
+			</div>
+			<div class="padded-full" style="padding-top:1%">
+				<input id="cellphone" name="cellphone" type="number" placeholder="    휴대폰번호" onkeydown="moveFocus(event, 'cellphone', '');">
+			</div>
+		</div>
+		<div style="padding-left: 8%; padding-right: 8%; padding-top:5%; text-align: center">
+			<button class="btn" id="confirm_pw" style="width:94%; background-color:#2bcdf5; height:auto"><p style="color:white; font-size:25px;">비밀번호 확인</p></button>
+		</div>
+	</div>
+</findpw>
+<script type="text/javascript">
+    function moveFocus(e, name, m_name) {
+        // ^, ⌵ 버튼을 누를 때 커서가 다음/이전 textbox로 이동하도록 하는 함수
+        document.querySelector('#mb_company_cd1').on('click', function() {
+        document.getElementById('mb_company_cd1').focus();
+        });
+                                                 
+        if (e.keyCode == 13) {
+            switch (name) {
+               case 'mb_company_cd1':
+                     console.log(m_name);
+                     document.getElementById(m_name).focus();
+                     break;
+               case 'mb_user_id1':
+                     console.log(m_name);
+                     document.getElementById(m_name).focus();
+                     break;
+               case 'cellphone':
+                     document.getElementById('confirm_pw').focus();
+                     Keyboard.hide();
+                     break;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\off.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-ldpi\\off.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\on.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-ldpi\\on.png"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\icon.png",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\drawable-ldpi\\icon.png"
+    }
+]

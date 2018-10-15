@@ -1,0 +1,27 @@
+<!--
+<changepw class="app-page">
+	<header class="header-bar">
+		<button class="btn pull-left" id="back-page" onclick="go_back();" style="margin-left:4%"><img src="img/arrow.png" style="background-color:#0084e7"></button>
+		<div class="center">
+			<h1 class="title" id="changepw_title" style="height: 100%; line-height: 250%; font-weight: bold;">비밀번호&nbsp;변경</h1>
+		</div>
+	</header>
+	<div class="content" style="background-color:#e8eff7">
+		<input id="com_cd" type="hidden">
+		<input id="user_id" type="hidden">
+		<div style="padding-top:10%; padding-left:10%">
+			<p style="font-size:15px">현재 비밀번호를 입력해주세요.</p>
+		</div>
+		<div style="padding-top:5%; padding-left:8%; padding-right:8%;">
+			<input type="password" id="r_pw" style="background-color:white">
+		</div>
+		<div style="padding-top:5%; padding-left:8%; padding-right:8%;">
+			<button class="btn" id="btn_chk_pw" style="background-color:#2bcdf5; width:100%"><p style="color:white; font-size:15px; text-align:center; padding-top:2%">비밀번호 확인</p></button>
+		</div>
+	</div>
+</changepw>
+<script type="text/javascript">
+	function go_back() {
+		history.go(-1);
+	}
+</script>-->

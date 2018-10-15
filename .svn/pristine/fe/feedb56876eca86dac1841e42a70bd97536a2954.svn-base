@@ -1,0 +1,78 @@
+<home class="app-page" style="text-size-adjust: none !important;">
+    
+    <div class="content login_bg" style="overflow-x: none;">
+        <div style="padding-top:15%; padding-left:6%; padding-right:6%; text-align:center">
+            <img src="img/login_logo.png" style="width:100%">
+                </div>
+        <div style="padding-top:8%; text-align:center">
+            <img id="findpasswd" src="img/pw.png" onclick="go_findpw();" style="width:50%">
+        </div>
+        <div style="padding-top:4%; padding-left:6%; padding-right:6%; text-align:center">
+            <p id="info_string" style="color: white;"></p>
+        </div>
+        <div class="login" style="margin: 5%; margin-left: 7%; margin-right: 7%;">
+            <form name="login_form">
+                <div class="login-name">
+                    <span class="login-code"> </span>
+                    <input type="text" id="mb_company_cd" name="mb_company_cd" placeholder="회사코드" style="text-transform: uppercase; ime-mode: inactive;" onfocus="this.value = '';" onkeydown="moveFocus(event, 'mb_company_cd', 'mb_user_id');">
+                        </div>
+                <div class="login-name">
+                    <span class="login-user"> </span>
+                    <input type="text" id="mb_user_id" name="mb_user_id" placeholder="사원코드" onfocus="this.value = '';" onkeydown="moveFocus(event, 'mb_user_id', 'mb_emp_pw');">
+                        </div>
+                <div class="login-password">
+                    <span class="login-key"> </span>
+                    <input type="password" id="mb_emp_pw" name="mb_emp_pw" placeholder="비밀번호" onfocus="this.value = '';" onkeydown="moveFocus(event, 'mb_emp_pw', '');">
+                        </div>
+            </form>
+        </div>
+        <ul style="height: 2.5em;">
+            <li class="list" id="check_button">
+                
+            </li>
+        </ul>
+        <div style="padding-left:6%; padding-right:6%; text-align:center">
+            <button class="btn" id="btn_login" style="width:100%; color:white; background-color:#2ccff5; height:9%"><p style="color:white; font-size:25px;font-weight: bold">로그인</p></button>
+        </div>
+    </div>
+</home>
+<script type="text/javascript">
+	function moveFocus(e, name, m_name) {
+        // ^, ⌵ 버튼을 누를 때 커서가 다음/이전 textbox로 이동하도록 하는 함수
+		document.querySelector('#mb_company_cd').on('click', function() {
+			document.getElementById('mb_company_cd').focus();
+		});
+
+		if (e.keyCode == 13) {
+			switch (name) {
+				case 'mb_company_cd':
+					console.log(m_name);
+					document.getElementById(m_name).focus();
+					break;
+				case 'mb_user_id':
+					console.log(m_name);
+					document.getElementById(m_name).focus();
+					break;
+				case 'mb_emp_pw':
+					document.getElementById('btn_login').focus();
+					Keyboard.hide();
+					break;
+			}
+		}
+	}
+
+    function go_findpw() {
+        app.changePage('findpw', null);
+    }
+</script>
+
+<script type="text/javascript">
+    document.addEventListener("deviceready", function() {
+        var p_model = localStorage.getItem('iModel');
+        if (p_model == 'iPhone5,1' || p_model == 'iPhone5,2' || p_model == 'iPhone5,3' || p_model == 'iPhone5,4' || p_model == 'iPhone6,1' || p_model == 'iPhone6,2' || p_model == 'iPhone8,4' || p_model == 'x86_64') {
+            $('#check_button').append('<label class="checkbox1" style="font-size: 80%; height: auto; width: 86%; top: -1em; left: 1.35em; padding-left: 3em; text-align: center; color: white;"><input type="checkbox" id="login_info"><span style="top: 1.3em; z-index: -1;"></span>회사코드/사원코드 저장하기</label>');
+        } else {
+            $('#check_button').append('<label class="checkbox1" style="font-size: 80%; height: auto; width: 86%; top: -1em; left: 1.95em; padding-left: 5em; text-align: center; color: white;"><input type="checkbox" id="login_info"><span style="top: 1.3em; z-index: -1;"></span>회사코드/사원코드 저장하기</label>');
+        }
+    });
+</script>

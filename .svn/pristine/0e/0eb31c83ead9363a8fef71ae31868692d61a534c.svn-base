@@ -1,0 +1,14 @@
+dependencies: \
+  /Users/junho/Documents/smartga/platforms/ios/SmartGA/Plugins/cordova-plugin-splashscreen/CDVViewController+SplashScreen.m \
+  /Users/junho/Documents/smartga/platforms/ios/SmartGA/Plugins/cordova-plugin-splashscreen/CDVViewController+SplashScreen.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVViewController.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVAvailabilityDeprecated.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h \
+  /Users/junho/documents/smartga/platforms/ios/build/emulator/include/Cordova/CDVWebViewEngineProtocol.h

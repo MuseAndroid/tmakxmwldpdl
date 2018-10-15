@@ -1,0 +1,50 @@
+<noti_list class="app-page">
+    <header class="header-bar">
+        <button class="btn pull-left" id="back-home" onclick="back_page();" style="margin-left: 4%; width:10%; background: url(img/arrow.png); background-size: 50% 50%; background-repeat: no-repeat; background-position:center"></button>
+        <div class="center">
+            <h1 class="title" id="notiHead" style="width: 200%; font-size: 1.5em; font-weight: bold; display: table-cell;">알림센터</h1>
+        </div>
+    </header>
+
+    <!-- 리스트 페이지에서 보여주는 div -->
+    <div class="content" id="list_content">
+        <ul id="noti-page">
+
+        </ul>
+    </div>
+
+    <!-- 알림 상세 페이지를 보여주는 iFrame -->
+    <div id="noti_connect" class="content" style="overflow:hidden; display: none">
+        <iframe id="noti_page_frame" name="noti_page_frame" style="height:100%; width: 100%; overflow-x:hidden;" frameborder="0" framespacing="0" marginheight="0" marginwidth="0" vspace="0" scrolling="no"></iframe>
+    </div>
+
+    <!-- 알림 상세(게시판 상세와 동일) -->
+    <form id="noti_formAgent" name="noti_formAgent" method="POST">
+    <input type=hidden id="noti_gubunNum" name="gubun_num" value="">
+    <input type=hidden id="noti_emp_cd" name="mb_emp_cd" value="">
+    <input type=hidden id="noti_com_cd" name="server_company_cd" value="">
+    <input type=hidden id="noti_regid" name="reg_id" value="">
+    <input type=hidden id="noti_menu_role" name="menu_authority_role_cd" value="">
+    <input type=hidden id="noti_data_role" name="data_authority_role_cd" value="">
+    <input type=hidden id="noti_device_type" name="device_type" value="">
+    <input type=hidden id="noti_bult_no" name="bult_no" value="">
+    <input type=hidden id="noti_bulbd_no" name="bulbd_no" value="">
+    </form>
+</noti_list>
+<script type="text/javascript">
+    function back_page() {
+        // 뒤로가는 작업을 할 때 상세페이지에 들어온 여부는 iFrame의 display 설정이 block인지 none인지를 판별하여 나뉨
+        // 뒤로가기 버튼을 누를 때 iframe의 display 설정이 block이면 none을 하여 리스트를 보여주는 div를 활성화 시킴
+        // 뒤로가기 버튼을 누를 때 iframe의 display 설정이 none이면 페이지를 벗어나도록 설정함.
+        if (document.getElementById('noti_connect').style.display == "block") {
+            console.log('상세페이지 부분');
+            location.reload();
+            document.getElementById('list_content').style.display = "block";
+            document.getElementById('noti_connect').style.display = "none";
+        } else {
+            console.log('리스트페이지 부분')
+            console.log(localStorage.getItem('nowHash'));
+            location.href = localStorage.getItem('nowHash');
+        }
+    }
+</script>

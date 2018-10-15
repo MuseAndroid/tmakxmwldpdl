@@ -1,0 +1,90 @@
+/* Example Styles
+	-----------------------------------------------*/
+
+/* General
+ -----------------------------------------------*/
+ body {
+     /*margin:50px;
+     font:14px/1.5em Arial, Helvetica, serif;*/
+ }
+ * {-webkit-box-sizing: border-box;	-moz-box-sizing: border-box;  box-sizing: border-box; -ms-box-sizing: border-box;}
+
+ /* Left Navigation
+ -----------------------------------------------*/
+ .mainNav {
+     background: #fff;
+     width: 25%;
+ }
+     /* First Level */
+     .mainNav ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+         border-bottom: 1px solid #ddd;
+     }
+     .mainNav ul li {
+         border-top: 1px solid #ddd;
+     }
+     .mainNav ul li a {
+         color: #555;
+         display: block;
+         font-size: 1.1em;
+         line-height: normal;
+         padding:12px 20px;
+         text-decoration:none;
+     }
+     .mainNav ul li a:hover {
+         background: #fff;
+         text-decoration: none;
+     }
+     .mainNav ul li span {
+         top: 10px
+     }
+         /* Second Level */
+         .mainNav ul ul {
+             border-bottom: none
+         }
+         .mainNav ul ul li {
+             border-top: 1px solid #ddd;
+             background: #fff;
+
+         }
+         .mainNav ul ul li a {
+             color:#555;
+             display: block;
+             font-size: 1em;
+             line-height: normal;
+             padding: 0.5em 0.5em 0.5em 2.5em;
+         }
+         .mainNav ul ul li a:hover {
+             background: #419ef7;
+             color:#fff;
+         }
+         .mainNav ul ul li span {
+             top: 4px;
+         }
+                 /* Third Level */
+         .mainNav ul ul ul {
+             border-top:1px solid #ddd;
+         }
+         .mainNav ul ul ul li {
+             border:none;
+         }
+         .mainNav ul ul ul li a {
+             padding-left:3.5em;
+             padding-top:0.25em;
+             padding-bottom:0.25em;
+         }
+     /* Accordion Button */
+     ul li.has-subnav .accordion-btn {
+         vertical-align: middle;
+         color:#419ef7;
+         /*background:rgba(255,255,255, 0.15); font-size:16px;*/
+     }
+
+ @media screen and (max-width: 1024px) {
+     .mainNav {width: 40%;}
+ }
+ @media screen and (max-width: 700px) {
+     .mainNav {width: 100%;}
+ }

@@ -1,0 +1,63 @@
+<home class="app-page" style="font-size-adjust: none !important">
+
+	<div class="content login_bg" style="overflow-x: none">
+		<div style="padding-top:15%; padding-left:6%; padding-right:6%; text-align:center">
+			<img src="img/login_logo.png" style="width:100%">
+		</div>
+		<div style="padding-top:8%; text-align:center">
+			<a><img id="findpasswd" onclick="go_findpw();" src="img/pw.png" style="width:50%"></a>
+		</div>
+		<div style="padding-top:4%; padding-left:6%; padding-right:6%; text-align:center;">
+			<p id="info_string" style="color: white;"></p>
+		</div>
+		<div class="login" style="margin: 5%; margin-left: 7%; margin-right: 7%;">
+			<form name="login_form">
+				<div class="login-name">
+					<span class="login-code"> </span>
+					<input type="text" id="mb_company_cd" name="mb_company_cd" placeholder="회사코드" style="text-transform: uppercase; ime-mode: inactive;" onfocus="this.value = '';" onkeydown="moveFocus(event, 'mb_company_cd', 'mb_user_id');">
+				</div>
+				<div class="login-name">
+					<span class="login-user"> </span>
+					<input type="text" id="mb_user_id" name="mb_user_id" placeholder="사원코드" onfocus="this.value = '';" onkeydown="moveFocus(event, 'mb_user_id', 'mb_emp_pw');">
+				</div>
+				<div class="login-password">
+					<span class="login-key"> </span>
+					<input type="password" id="mb_emp_pw" name="mb_emp_pw" placeholder="비밀번호" onfocus="this.value = '';" onkeydown="moveFocus(event, 'mb_emp_pw', '');">
+				</div>
+			</form>
+		</div>
+		<label class="checkbox1" style="font-size: 80%; height: auto; width: 86%; top: -1em; left: 2.15em; padding-left: 7em; text-align: center; color: white;"><input type="checkbox" id="login_info"><span id="aaaa" style="top: 1em;"></span>회사코드/사원코드 저장하기</label>
+		<div style="padding-left:6%; padding-right:6%; text-align:center">
+			<button class="btn" id="btn_login" style="width:100%; top: -0.5em; color:white; background-color:#2ccff5; height:9%"><p style="color:white; font-size:25px;font-weight: bold">로그인</p></button>
+		</div>
+	</div>
+</home>
+<script type="text/javascript">
+	function moveFocus(e, name, m_name) {
+
+		document.querySelector('#mb_company_cd').on('click', function() {
+			document.getElementById('mb_company_cd').focus();
+		});
+
+		if (e.keyCode == 13) {
+			switch (name) {
+				case 'mb_company_cd':
+					console.log(m_name);
+					document.getElementById(m_name).focus();
+					break;
+				case 'mb_user_id':
+					console.log(m_name);
+					document.getElementById(m_name).focus();
+					break;
+				case 'mb_emp_pw':
+					document.getElementById('btn_login').focus();
+					Keyboard.hide();
+					break;
+			}
+		}
+	}
+
+	function go_findpw () {
+		app.changePage('findpw', null);
+	}
+</script>

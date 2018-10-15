@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- meta값 및 css 지정 부분은 이 부분에서 지정하면 됨. -->
+    <meta charset="utf-8" >
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="inc/custom.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/navAccordion_style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/loading.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <header name = "Access-Control-Allow-Origin" value = "*" />
+
+    <script src="js/phonon.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/fastclick.js" type="application/javascript"></script>
+
+    <link href="css/materialize.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/phonon.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+
+    <script src="js/navAccordion.min.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+            html, body{
+            transform: translateZ(0px);
+            text-size-adjust: none important;
+            // 텍스트 사이즈 변경을 막도록 하는 css 설정
+            // 동작 x
+            }
+        </style>
+    <script>
+            document.addEventListener('deviceready', function () {
+                var contentWidth = document.body.scrollWidth,
+                    windowWidth = window.innerWidth,
+                    newScale = windowWidth / contentWidth;
+                    console.log('innerWidth : ' + windowWidth);
+                    console.log('newScale : ' + newScale);
+                //document.body.style.zoom = newScale;
+                // 웹뷰 내부의 너비를 알아내는 함수
+            });
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("body").scrollTop(0);
+            console.log($(window).width());
+            console.log(window.devicePixelRatio);
+        });
+        </script>
+    <script type="text/javascript">
+            function board_menu() {
+                // var server1 = 'http://192.168.2.74:8031';
+                // var server1 = 'http://192.168.2.199:8087';
+                var server1 = 'http://app3.genexon.co.kr';
+                // 햄버거 메뉴의 게시판 리스트를 그릴 수 있도록 앱서버에서 게시판 항목 받아오는 함수부
+                console.log('32번 API 진입');
+                $('#outer-wrap').append('<nav class="mainNav"><ul id="smenu_data"></ul></nav>');
+                var platform = phonon.device.os;
+                var device_type = '';
+                if(platform == "Android") {
+                    device_type = 'A';
+                } else if (platform == "iOS") {
+                    device_type = 'I';
+                }
+                var data_gubun = '32';
+                if (localStorage.getItem('com_cd') != null) {
+                    com_cd = localStorage.getItem('com_cd');
+                } else if (localStorage.getItem('comp_cd') != null) {
+                    com_cd = localStorage.getItem('comp_cd');
+                }
+                regid = localStorage.getItem('regid');
+                emp_cd = sessionStorage.getItem('emp_cd');
+                menu_role = localStorage.getItem('menu_role');
+                data_role = localStorage.getItem('data_role');
+                var board_title_data = {
+                    gubun_num: data_gubun,
+                    server_company_cd: com_cd,
+                    reg_id: regid,
+                    device_type: device_type,
+                    mb_emp_cd: emp_cd,
+                    menu_authority_role_cd: menu_role,
+                    data_authority_role_cd: data_role
+                };
+                var board_title_call = serverCall(board_title_data);
+                if (board_title_call.CODE == '001') {
+                    console.log('햄버거 메뉴 리스트 그리기 시작');
+                    $('#smenu_data').append('<li style="vertical-align: middle"><a style="font-weight: bold;"><p id="nConNum" style="position: relative;float: right;width:10%; line-height: 150%; background-color: #FF0000;color: white;text-align: center;font-size: 0.8em; font-weight: bold;border-radius: 100%; margin-top: 2%"></p><img src="images/drawer_icon07.png" style="width: 25px; height: auto; vertical-align: middle; font-weight: bold;">&nbsp;&nbsp;게시판</a><ul id="menu_data"></ul></li>');
+                    $.each(board_title_call.DATA.RESULT, function (index, item) {
+                        var imgUrl = server1 + item.MENU_IMG;
+                        $('#smenu_data').append('<li style="vertical-align: middle"><a onclick="go_page(\'' + item.MENU_ID + '\');" style="font-weight: bold;"><img src="' + imgUrl + '.png" style="width: 25px; height: auto; vertical-align: middle; font-weight: bold;">&nbsp;&nbsp;' + item.MENU_NM + '</a></li>');
+                    });
+                    // $('#menu_data').children().remove();
+                    // $('#menu_data').empty();
+                    $.each(board_title_call.DATA.BOARD, function (index, item) {
+                        if (item.LVL == '2' && item.BULBD_CHILDS == null) {
+                            $('#menu_data').append('<li><a onclick="go_board(\'' + item.GUBUN_NUM + '\', ' + item.CHILD + ');" style="vertical_align: middle; font-weight: bold;"><img src="images/drawer_icon07.png" style="width: 25px; height: auto; vertical-align: middle">&nbsp;&nbsp;' + item.PARAM1 + '</a></li>');
+                        } else if (item.LVL == '2' && item.BULBD_CHILDS != null) {
+                            $('#menu_data').append('<li style="vertical_align: middle;"><a style="vertical_align: middle; font-weight: bold;"><img src="images/2x_folder.png" style="width: 25px; height: auto; vertical-align: middle">&nbsp;&nbsp;' + item.PARAM1 + '</a><ul id="detail_menu_' + item.CHILD +'"></ul></li>');
+                        } else if (item.LVL == '3' && item.BULBD_CHILDS == null) {
+                            $('#detail_menu_' + item.PARENT).append('<li style="vertical_align: middle;"><a onclick="go_board(\'' + item.GUBUN_NUM + '\', '+ item.CHILD + ');" style="vertical_align: middle; font-weight: bold;"><img src="images/drawer_icon07.png" style="width: 25px; height: auto; vertical-align: middle">&nbsp;&nbsp;' + item.PARAM1 + '</a></li>');
+                        } else if (item.LVL == '3' && item.BULBD_CHILDS != null) {
+                            $('#detail_menu_' + item.PARENT).append('<li><a style="vertical_align: middle; font-weight: bold;"><img src="images/2x_folder.png" style="width: 25px; height: auto; vertical-align: middle">&nbsp;&nbsp;' + item.PARAM1 + '</a><ul id="details_menu_' + item.CHILD +'"></ul></li>');
+                        } else if (item.LVL == '4') {
+                            $('#details_menu_' + item.PARENT).append('<li><a onclick="go_board(\'' + item.GUBUN_NUM + '\', '+ item.CHILD + ');" style="vertical_align: middle; font-weight: bold;"><img src="images/drawer_icon07.png" style="width: 25px; height: auto; vertical-align: middle">&nbsp;&nbsp;' + item.PARAM1 + '</a></li>');
+                        }
+                    });
+
+                    $('.mainNav').navAccordion({
+                        expandButtonText: '<i class="fa fa-plus" style="width: 110%"></i>',  //Text inside of buttons can be HTML
+                        collapseButtonText: '<i class="fa fa-minus" style="width: 110%"></i>'
+                    },
+                    function(){
+                        console.log('Callback')
+                    });
+                } else {
+                    phonon.alert(board_title_call.TEXT, '', false, '확인');
+                }
+            }
+        </script>
+    <title>SmartGA</title>
+</head>
+<body style="font-family: 'SourceSansPro-Light';">
+
+<div id="action-sheet" class="panel">
+    <div class="content">
+        <header class="header-bar" id="panel_menu" style="background-color:#419ef7; padding-bottom: 50px; height: 100px;">
+
+        </header>
+
+        <div id="outer-wrap" class="content" style="background-color:white; padding-top: 45px; padding-bottom: 15%;">
+            <!--<nav class="mainNav">-->
+            <!--<ul id="smenu_data">-->
+            <!--</ul>-->
+            <!--</nav>-->
+        </div>
+        <div class="footer" style="text-align: center; vertical-align: bottom; background-color: white">
+            <button class="btn pull-left" id="btn_plogin" style="width: 49.5%; height: auto; background-color: #D5D5D5;" onclick="go_login();"><img src="images/code.png" style="vertical-align: middle">&nbsp;&nbsp;로그인</button>
+            <button class="btn pull-left" id="btn_logout" style="width: 49.5%; height: auto; background-color: #D5D5D5;" onclick="logout();"><img src="images/drawer_icon09.png" style="width: 25px; height: auto; vertical-align: middle">&nbsp;&nbsp;로그아웃</button>
+            <button class="btn pull-right" id="btn_setting" style="width: 49.5%; height: auto; background-color: #D5D5D5;" onclick="go_setting();"><img src="images/drawer_icon10.png" style="width: 25px; height: auto; vertical-align: middle">&nbsp;&nbsp;설정</button>
+        </div>
+    </div>
+</div>
+
+
+<home data-page="true" data-loader="true" data-nocache="true"></home>
+<splash_screen data-page="true" data-loader="true" data-nocache="true"></splash_screen>
+<findpw data-page="true" data-nocache="true"></findpw>
+<setting data-page="true" data-nocache="true"></setting>
+<mainset data-page="true" data-nocache="true"></mainset>
+<rewritepw data-page="true" data-nocache="true"></rewritepw>
+<list_page data-page="true" data-loader="true"></list_page>
+<warn_page data-page="true" data-loader="true" data-nocache="true"></warn_page>
+<noti_list data-page="true" data-loader="true" data-nocache="true"></noti_list>
+
+<script type="text/javascript" src="js/backbutton.js"></script>
+<!-- 로그아웃 이슈해결 : session / local Storage의 아이템을 클리어 하는 과정에서 로그인에 관련된 아이템들이 지워졌는지에 대한 조건이 성립이 안되 발생했던 문제 해결 -->
+<!-- chrome://inspect 에 들어가 web resource 항목에서 session 및 local storage 자원 확인 가능 -->
+<script type="text/javascript">
+            function logout() {
+                sessionStorage.clear();
+                localStorage.removeItem('data_role');
+                localStorage.removeItem('menu_role');
+                localStorage.removeItem('lat');
+                localStorage.removeItem('lng');
+                localStorage.removeItem('gender');
+                localStorage.removeItem('logo_img');
+                localStorage.removeItem('pnsCnt');
+                localStorage.removeItem('nowHash');
+                // 로그아웃 시 세션 및 로컬 스토리지에 저장한 내용 삭제(재 로그인 상황을 위해 reg_id 값은 유지)
+                if (window.sessionStorage.getItem('emp_cd') === null && window.localStorage.getItem('emp_nm') === null) {
+                    phonon.panelUtil.closeActive();
+                    var logout = phonon.alert('로그아웃 되었습니다.', '', false, '확인');
+                    logout.on('confirm', function() {
+                        app.changePage('home', null);
+                        setTimeout(function() {
+                            $('#panel_menu').empty();
+                            $('#outer-wrap').empty();
+                        }, 500);
+                    });
+                } else {
+                    phonon.panelUtil.closeActive();
+                    var logerr = phonon.alert('진행 중 오류가 발생했습니다. 로그인 페이지로 이동합니다.', '', false, '확인');
+                    logerr.on('confirm', function() {
+                        app.changePage('home', null);
+                    });
+                }
+            }
+
+            function go_login() {
+                app.changePage('home', null);
+            }
+
+            function go_setting() {
+                app.changePage('setting', null);
+            }
+        </script>
+<script type="text/javascript">
+            /**
+            * tokenHandler
+            *
+            * @param result
+            **/
+            function tokenHandler(result) {
+                // 아이폰의 토큰 아이디를 받아오는 핸들러 함수
+                console.log('deviceToken = ' + result);
+            }
+
+            /**
+            * errorHandler
+            *
+            * @param err
+            **/
+            function errorHandler(err) {
+                console.log('error = ' + err);
+            }
+
+            /**
+            * successHandler
+            *
+            * @param result
+            **/
+            function successHandler(result) {
+                // 아이폰의 경우 뱃지 갯수, 안드로이드의 경우 registration ID를 받아오는 함수
+                console.log('성공결과 = ' + result);
+            }
+
+            /**
+            * onNotificationAPN
+            *
+            * @param event
+            **/
+            function onNotificationAPN(event) {
+                // 아이폰으로 앱을 실행했을 때 동작되는 APNS 함수
+                if (event.alert) {
+                    navigator.notification.alert(event.alert);
+                }
+
+                if (event.sound) {
+                    var snd = new Media(event.sound);
+                    snd.play();
+                }
+
+                if (event.badge) {
+                    window.plugins.pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
+                }
+            }
+
+            /**
+            * onNotificationGCM
+            *
+            * @param e
+            **/
+            function onNotificationGCM(e) {
+                // 안드로이드로 동작했을 때 GCM 서버에서 데이터를 받아오는 함수
+                switch(e.event) {
+                    case 'registered' :
+                        if (e.regid.length > 0) {
+                            console.log('registerID = ' + e.regid);
+                            window.localStorage.regid = e.regid;
+                            window.localStorage.setItem('regid', e.regid);
+                        }
+                        break;
+                    case 'message' :
+                        {
+                            cordova.plugins.notification.badge.set(e.msgcnt);
+                            if (e.foreground) {
+                                var soundfile = e.soundname || e.payload.sound;
+                                var my_media = new Media("android_asset/www/" + soundfile);
+                                console.log('게시글 제목 = ' + e.payload.title);
+                                if (e.payload.title != null) {
+                                    // phonon.alert(e.payload.message, '', false, '확인');
+                                } else {
+                                    // phonon.alert(e.payload.message, '', false, '확인');
+                                }
+                                my_media.play();
+                            } else {
+                                // phonon.alert(e.payload.message, '', false, '확인');
+                                if (e.coldstart) {
+                                    console.log('state : foreground');
+                                } else {
+                                    console.log('state : background');
+                                }
+                            }
+
+                            if (e.msgcnt != null || e.msgcnt != '0' || e.msgcnt != NaN || e.msgcnt != undefined) {
+                                var msgcnt = e.msgcnt;
+                                console.log(e.msgcnt);
+                                // cordova.plugins.notification.badge.set(e.msgcnt);
+                            } else {
+                                console.log(e.msgcnt);
+                            }
+                            console.log('msg = ' + e.payload.message);
+                            // navigator.notification.alert(e.payload.message, e.payload.title);
+                            // navigator.notification.alert('새로운 게시글이 등록되었습니다.');
+                            var noti_move = phonon.alert(e.payload.message, '', false, '확인');
+                            noti_move.on('confirm', function() {
+                            if (sessionStorage.getItem('emp_cd') == null) {
+                                    var path = 'noti_list';
+                                    localStorage.setItem('notimove', path);
+                                } else {
+                                    app.changePage('noti_list', null);
+                                }
+                            });
+                        }
+                        break;
+                    case 'error' :
+                        console.log('error : ' + e.payload.message);
+                        break;
+                    case 'default' :
+                        console.log('unknown event');
+                        break;
+                }
+            }
+
+            document.addEventListener("deviceready", function() {
+                console.log(device.platform);
+
+                if (device.platform.toUpperCase() == 'ANDROID') {
+                    window.plugins.pushNotification.register(successHandler, errorHandler, {
+                        "senderID" : "66086161130",
+                        "icon" : "icon",
+                        "iconColor" : "",
+                        "ecb" : "onNotificationGCM"
+                        // 신규 프로젝트를 smartGA 베이스로 시작할 때 senderID를 GCM 등록 사이트에 새 프로젝트 등록 후 나오는 senderID로 교체해야 함.
+                    });
+                } else {
+                    window.plugins.pushNotification.register(tokenHandler, errorHandler, {
+                        "badge":"true",
+                        "sound":"true",
+                        "alert":"true",
+                        "ecb":"onNotificationAPN"
+                    });
+                }
+            });
+        </script>
+
+<script type="text/javascript">
+            document.addEventListener("deviceready", function() {
+                sessionStorage.clear();
+                localStorage.removeItem('data_role');
+                localStorage.removeItem('menu_role');
+                localStorage.removeItem('lat');
+                localStorage.removeItem('lng');
+                localStorage.removeItem('gender');
+                localStorage.removeItem('logo_img');
+                localStorage.removeItem('pnsCnt');
+                localStorage.removeItem('nowHash');
+                localStorage.removeItem('logo_img');
+                var deviceInfo = device.manufacturer;
+                console.log(deviceInfo);
+            }, false);
+        </script>
+
+<script type="text/javascript">
+            // 햄버거 메뉴에서 각 페이지로 이동할 때 사용되는 함수들
+             function emp_excp (gubun_num) {
+                if (sessionStorage.getItem('emp_cd') == "ADMIN" || sessionStorage.getItem('emp_cd') == "SADMIN") {
+                    console.log(sessionStorage.getItem('emp_cd'));
+                    var mPageCase = phonon.alert('관리자 사번의 마이페이지는 존재하지 않습니다.', '', false, '확인');
+                    mPageCase.on('confirm', function() { });
+                } else {
+                        go_page(gubun_num);
+                }
+            }
+
+            function go_page(gubun_num) {
+                getPositionPoint(gubun_num);
+                phonon.panelUtil.closeActive();
+                search_title();
+            }
+            // 각 게시판으로 이동할 때 사용되는 함수(게시판 및 게시판 번호를 인자로 넘기기 때문에 따로 작성함.)
+            function go_board(g_num, bulbd_no) {
+                console.log('현위치 = ' + window.location.hash);
+                search_title();
+                console.log('구분번호 - ' + g_num);
+                view_page(g_num, bulbd_no);
+                console.log('게시판 번호 = ' + bulbd_no);
+                var listLoc = "#!list_page/board/" + bulbd_no + "/";
+                console.log(listLoc);
+                if (window.location.hash != listLoc) {
+                    window.location.href = listLoc;
+                } else {
+                    window.location.href = listLoc;
+                }
+            }
+        </script>
+<script>
+            document.addEventListener("deviceready", function() {
+                window.screen.lockOrientation('portrait');
+                // 앱의 화면 방향을 설정하는 플러그인
+            });
+        </script>
+<script>
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            function onDeviceReady() {
+            	window.plugins.screensize.get(successCallback);
+        	}
+
+        	function successCallback(result) {
+        		console.log(result.width);
+        		console.log(result.height);
+        		localStorage.setItem('device_height', result.height);
+        		// 기기의 실제 높이 값을 구하는 플러그인
+        		// 구한 값을 로컬스토리지에 보관 후 사용 시 요청
+        	}
+        </script>
+
+<script>
+            document.addEventListener("deviceready", function() {
+                setTimeout(function() {
+                    var platform = phonon.device.os;
+                    if (platform.toUpperCase() == "ANDROID") {
+                        console.log(platform);
+                        StatusBar.backgroundColorByHexString('#119EF7');
+                        // 안드로이드 롤리팝 이후 버전부터 적용되는 상단바 색상 변경을 지원하는 플러그인
+                        // 현재 지정 색상 - 옅은 파란색
+                    }
+                }, 500);
+            }, false);
+        </script>
+
+<!--<script type="text/javascript">
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+        console.log(navigator.connection);
+        console.log(navigator.connection.type);
+        var networkState = navigator.connection.type;
+
+        /* var states = {};
+        states[Connection.UNKNOWN] = '알 수 없는 네트워크에 연결되었습니다.';
+        states[Connection.WIFI] = 'WIFI에 연결되었습니다.';
+        states[Connection.CELL_2G] = '2G 네트워크에 연결되었습니다.';
+        states[Connection.CELL_3G] = '3G 네트워크에 연결되었습니다.';
+        states[Connection.CELL_4G] = '4G 네트워크에 연결되었습니다.';
+        states[Connection.CELL] = 'GMS 네트워크에 연결되었습니다.';
+        states[Connection.NONE] = '네트워크 연결되지 않았습니다.'; */
+
+        if (networkState == "3g" || networkState == "4g") {
+            if (networkState == "3g") {
+                window.plugins.toast.showWithOptions({
+                    message: "모바일 데이터(3G)에 연결되었습니다.",
+                    duration: "short",
+                    position: "bottom",
+                    addPixelsY: -150,
+                    styling: {
+                        opacity: 0.65,
+                        backgroundColor: '#000000',
+                        textColor: '#FFFFFF',
+                        textSize: 20,
+                        cornerRadius: 0
+                    }
+                });
+            } else if (networkState == "4g") {
+                window.plugins.toast.showWithOptions({
+                    message: "모바일 데이터(LTE/4G)에 연결되었습니다.",
+                    duration: "short",
+                    position: "bottom",
+                    addPixelsY: -150,
+                    styling: {
+                        opacity: 0.65,
+                        backgroundColor: '#000000',
+                        textColor: '#FFFFFF',
+                        textSize: 20,
+                        cornerRadius: 0
+                    }
+                });
+            }
+            setTimeout(function() {
+                var mDataConfirm = phonon.confirm('모바일 데이터로 연결되었습니다. 진행하시겠습니까?<br>(SmartGA 이용시에 요금이 부과될 수 있습니다.)', '', false, '확인', '취소');
+                mDataConfirm.on('confirm', function() {
+                });
+                mDataConfirm.on('cancel', function() {
+                    navigator.app.exitApp();
+                });
+            }, 1000);
+        } else if (networkState == "2g" || networkState == "unknown") {
+            window.plugins.toast.showWithOptions({
+                message: "서비스를 이용할 수 는 데이터에 연결되었습니다.",
+                duration: "short",
+                position: "bottom",
+                addPixelsY: -150,
+                styling: {
+                    opacity: 0.65,
+                    backgroundColor: '#000000',
+                    textColor: '#FFFFFF',
+                    textSize: 20,
+                    cornerRadius: 0
+                }
+            });
+        } else if (networkState == "none") {
+            window.plugins.toast.showWithOptions({
+                message: "네트워크 연결이 되어있지 않아 서비스를 이용할 수 없습니다. 설정 -> 무선인터넷/wi-fi 설정에서 데이터 사용을 눌러주세요.",
+                duration: "short",
+                position: "bottom",
+                addPixelsY: -150,
+                styling: {
+                    opacity: 0.65,
+                    backgroundColor: '#000000',
+                    textColor: '#FFFFFF',
+                    textSize: 20,
+                    cornerRadius: 0
+                }
+            });
+        } else if (networkState == "wifi") {
+            window.plugins.toast.showWithOptions({
+                message: "Wi-Fi로 연결되었습니다.",
+                duration: "short",
+                position: "bottom",
+                addPixelsY: -150,
+                styling: {
+                    opacity: 0.65,
+                    backgroundColor: '#000000',
+                    textColor: '#FFFFFF',
+                    textSize: 20,
+                    cornerRadius: 0
+                }
+            });
+        }
+    }
+</script>-->
+
+<!-- 앱에서 사용되는 스크립트 선언부 (플러그인 다운로드 후 사용할 때에도 이 부분에 명시해줘야 함.) -->
+<script src="cordova.js"></script>
+<script src="app.js"></script>
+<script src="plugins/cordova-plugin-dialogs/www/android/notification.js"></script>
+<script src="plugins/cordova-plugin-media/www/Media.js"></script>
+<script src="plugins/cordova-plugin-x-toast/www/Toast.js"></script>
+<script src="plugins/cordova-plugin-badge/www/badge.js"></script>
+<script src="plugins/cordova-plugin-vibration/www/vibration.js"></script>
+<script src="plugins/cordova-plugin-statusbar/www/statusbar.js"></script>
+<script src="plugins/cordova-plugin-file-transfer/www/FileTransfer.js"></script>
+<script src="plugins/cordova-plugin-file-transfer/www/FileTransferError.js"></script>
+<script src="plugins/cordova-plugin-pushplugin/www/PushNotification.js"></script>
+<script src="plugins/cordova-plugin-splashscreen/www/splashscreen.js" charset="UTF-8"></script>
+<script src="plugins/cordova-plugin-phonecaller/www/phonecaller.js"></script>
+<script src="plugins/cordova-plugin-keyboard/www/keyboard.js"></script>
+<script src="plugins/cordova-plugin-network-information/www/Connection.js"></script>
+<script src="plugins/cordova-plugin-network-information/www/network.js"></script>
+<script src="plugins/cordova-plugin-screen-orientation/www/screenorientation.js"></script>
+<script src="plugins/cordova-plugin-geolocation/www/android/geolocation.js"></script>
+<script src="plugins/org.nypr.cordova.wakeupplugin/www/wakeup.js"></script>
+</body>
+</html>

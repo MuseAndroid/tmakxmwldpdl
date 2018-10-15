@@ -1,0 +1,22 @@
+<mainset class="app-page">
+	<header class="header-bar">
+		<button class="btn pull-left" id="back-page" onclick="back_btn();" style="margin-left: 4%; width:10%; background: url(img/arrow.png); background-size: 50% 50%; background-repeat: no-repeat; background-position:center"></button>
+		<div class="center">
+			<h1 class="title" id="msetHead" style="width: 200%; font-size: 1.5em; font-weight: bold; display: table-cell;">메인화면 설정</h1>
+		</div>
+	</header>
+	<div class="content padded-full">
+		<ul class="list">
+			<li id="m_board_list" class="padded-for-list"><label class="radio" style="font-size: 150%; padding-top: 2%">게시판형<input type="radio" id="m_board" name="main" value="01" ><span></span></label></li>
+			<li id="m_grade_list" class="padded-for-list"><label class="radio" style="font-size: 150%; padding-top: 2%">업적관리형<input type="radio" id="m_grade" name="main" value="02"><span></span></label></li>
+			<li id="m_todo_list" class="padded-for-list"><label class="radio" style="font-size: 150%; padding-top: 2%">일정관리형<input type="radio" id="m_todo" name="main" value="03"><span></span></label></li>
+		</ul>
+
+	</div>
+</mainset>
+
+<script type="text/javascript">
+	function back_btn() {
+		app.changePage('setting');
+	}
+</script>

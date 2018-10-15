@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_right.xml",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\anim\\slide_in_right.xml"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_left.xml",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_left.xml",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\anim\\slide_in_left.xml"
+    },
+    {
+        "merged": "G:\\genexon\\smartga\\smartga\\platforms\\android\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_right.xml",
+        "source": "G:\\genexon\\smartga\\smartga\\platforms\\android\\res\\anim\\slide_out_right.xml"
+    }
+]

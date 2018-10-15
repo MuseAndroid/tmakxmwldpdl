@@ -1,0 +1,83 @@
+<!--<c_location class="app-page">
+	<header class="header-bar">
+		<button class="btn pull-left" id="back-page" data-navigation="$previous-page" style=" margin-left:4%"><img src="img/arrow.png" style="background-color:#0084e7"></button>
+		<div class="center">
+			<h1 class="title" id="location_title" style="transform: translateY(15%); font-weight:bold; font-size: 150%">고객&nbsp;위치</h1>
+		</div>
+	</header>
+
+	<div class="content">
+		&lt;!&ndash;지도 보여줄 위치임&ndash;&gt;
+		<div id="map-canvas" style="position: relative">
+			<img src="img/point_off.png" id="findPos" style="position: relative; z-index: 50; width: 10%; height: auto; margin: 5%;">
+		</div>
+		<div class="row" style="position: relative; margin-top: -10px;">
+			<div class="map_title" style="">
+				<div class="situation_top_2" style="z-index: 20; transform: translateY(5px)">
+					&lt;!&ndash;남자 아이콘&ndash;&gt;
+					<img src="images/user.png" style="width:23px;border-radius:50%" alt="">
+					&lt;!&ndash;여자 아이콘
+		<img src="images/user_girl.png" style="width:23px;border-radius:50%" alt="">&ndash;&gt;
+					&lt;!&ndash;가망고객&ndash;&gt;
+					<img src="images/possibility.png" style="width:23px;border-radius:50%" alt="">
+					&lt;!&ndash;계약고객
+		<img src="images/contract.png" style="width:23px;border-radius:50%" alt="">&ndash;&gt;
+					&lt;!&ndash;기혼여부 아이콘&ndash;&gt;
+					<img src="images/s_married.png" style="width:23px;border-radius:50%" alt="">
+					&lt;!&ndash;결혼기념일 일때 아이콘 ****->
+				<img src="images/s_married_pic.png" style="width:20px;border-radius:50%" alt="">&ndash;&gt;
+					&lt;!&ndash;생일일때&ndash;&gt;
+					<img src="images/s_birth.png" style="width:23px;border-radius:50%" alt="">
+				</div>
+				<table class="table table-striped" style="background:#fff; transform: translateX(15px); width: 100%;">
+					<thead>
+					<tr class="headings">
+						<th rowspan="2" class="map_no" style=" vertical-align: middle; font-size: 23px;">
+							D
+						</th>
+						<th class="map_name" style="font-size: 23px; text-align: left">
+							나고객 <small>512m </small>
+						</th>
+					</tr>
+					<tr>
+						<th class="map_adress" style="font-size: 23px; text-align: left">
+							서울시 강남구 도곡로2길 14 규원빌딩 4층
+						</th>
+					</tr>
+					</thead>
+				</table>
+			</div>
+			&lt;!&ndash;//map_title&ndash;&gt;
+		</div>
+	</div>
+</c_location>-->
+
+<!--<script type="text/javascript">
+$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+		type: 'default', //Types: default, vertical, accordion
+		width: 'auto', //auto or any width like 600px
+		fit: true   // 100% fit in a container
+	});
+});
+</script>-->
+
+<!--<script type="text/javascript" charset="utf-8">-->
+	<!--var map;-->
+	<!--document.addEventListener("deviceready", function() {-->
+		<!--var div = document.getElementById("map-canvas");-->
+
+		<!--map = plugin.google.maps.Map.getMap(div, {-->
+			<!--'controls' : {-->
+				<!--'myLocationButton' : true,-->
+				<!--'zoom' : true,-->
+				<!--'compass' : true-->
+			<!--}-->
+		<!--});-->
+
+		<!--map.addEventListener(plugin.google.maps.event.MAP_READY, onMapInit);-->
+	<!--});-->
+
+	<!--function onMapInit(map) {-->
+	<!--}-->
+<!--</script>-->
